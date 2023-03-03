@@ -1,0 +1,50 @@
+WIFI HACKING WITH EVIL TWIN FLUXION SPOOFING
+
+1. Download the repository here: https://github.com/FluxionNetwork/fluxion.git
+2. cd fluxion
+3. run sudo ./fluxion
+4. run sudo ./fluxion -i (automatically install apps)
+5. install all undownloaded app by manualing (sudo apt install) if not work automatically
+6. Use TP-Link Wireless Adapter external (for your safety)
+7. If you're using the Wifi in your PC skip this step
+   - Before run fluxion, reset the wireless service manager using
+     sudo systemctl stop NetworkManager.service
+     sudo airmon-ng check kill
+   - Run the fluxion again using 
+     sudo ./fluxion.sh
+8. Find Handshake of Wifi
+   - Click Handshake Snooper [2]
+   - Choose you're WIFI network (Recommended using TP-Link)
+   - Find all channel (2,4GHz & 5GHz) [3]
+   - Waiting until your WIFI target detected then close the fluxion scanner
+   - Choose the WIFI target by entering the number of list
+   - Skip the step [3]
+   - Reset attack [2]
+   - mdk4 deauthentication (aggresive) [3]
+   - Choose your network interface (recommeded using TP-Link)
+   - Cowpatty vertification (recommended) [2]
+   - Every 30 seconds (recommended) [1]
+   - Synchronously (recommended) [2]
+   - Waiting until the handshake was ready
+   - If the attack completed, close the Handshake Snooper Arbiter Log 
+   - Click Select another attack [1]
+9. Attack with Evil Twin
+   - CLick Captive Portal [1]
+   - Click [Y] to continue attack the previous target
+   - Skip the step [3]
+   - Reset attack [2]
+   - Choose your network interface for jamming (recommeded using TP-Link)
+   - Choose your network interface for access point (recommeded using TP-Link)
+   - Click mdk4 [1]
+   - Rogue AP - hostapd (recommended) [1]
+   - Hash - cowpatty [1]
+   - Use hash found [1]
+   - Cowpatty Verification (recommended) [2]
+   - Create an SSL Certificate [1]
+   - Disconnected (recommended) [1]
+   - Choose your SSL Certificate
+   - Wait until someone using your WIFI
+   - The password was saved in
+     /home/kali/fluxion/attacks/CapativePortal/netlog/Your_Wifi.log
+10. Turn on the Wireless Network (for TP-Link only)
+    sudo systemctl start NetworkManager.service
